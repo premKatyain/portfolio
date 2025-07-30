@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;600&display=swap"
+            rel="stylesheet">
+    </head>
+    
+
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+            </nav>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Hi, I'm <span>Prem Katyain</span></h2>
+                    <p>Turning Data into Impactful Solutions</p><br>
+                    <a href="DS resume.pdf" target="_blank" class="btn">View Resume</a>
+
+
+
+
+                </div>
+            </section>
+        </header>
+
+        <main>
+            <section id="about" class="glass-card">
+                <h2>About Me</h2>
+                <p>I’m passionate about turning data into intelligent solutions. With a strong foundation in machine
+                    learning and a curiosity-driven mindset, I enjoy building models that solve real-world challenges
+                    across diverse domains. I thrive on continuous learning, creative problem-solving, and using
+                    technology to make a meaningful impact.</p>
+                <br>
+                <a href="about.html" class="btn">More</a>
+            </section>
+
+            <section id="skills" class="glass-card">
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li>Python</li>
+                    <li>Machine Learning</li>
+                    <li>Computer Vision</li>
+                    <li>Natural Language Processing (NLP)</li>
+                    <li>Flask</li>
+                    <li>Streamlit</li>
+                    <li>SQL</li>
+                    <li>Power BI</li>
+                    <li>Data Analysis</li>
+                </ul>
+            </section>
+
+            <section id="contact" class="glass-card">
+                <h2>Contact</h2>
+                <p>Feel free to reach out at: </p><br><a href="mailto:katyain1prem@gmail.com"
+                    class="btn">katyain1prem@gmail.com</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Prem Katyain</p>
+        </footer>
+
+        <script>
+    // Add fade-in class when page loads
+    document.body.classList.add('fade-out');
+    window.addEventListener('load', () => {
+        document.body.classList.remove('fade-out');
+        document.body.classList.add('fade-in');
+    });
+
+    // Add fade-out on link click (excluding target="_blank" and others)
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (
+            href &&
+            !href.startsWith('#') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:') &&
+            link.target !== '_blank'
+        ) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.body.classList.remove('fade-in');
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = this.href;
+                }, 400); // delay for transition
+            });
+        }
+    });
+</script>
+
+    </body>
+
+</html>

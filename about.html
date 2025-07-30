@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About Me - Portfolio</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;600&display=swap"
+            rel="stylesheet">
+    </head>
+
+   
+
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="about-section">
+                <div class="about-container">
+                    <div class="profile-pic">
+                        <img src="img/prem.png" alt="Your Photo">
+                    </div>
+                    <div class="about-content">
+                        <h2>About Me</h2>
+                        <p>
+                            I’m a tech enthusiast with a passion for data science. I enjoy
+                            exploring real-world problems and using data-driven solutions to solve them. With a strong
+                            academic foundation and hands-on project experience, I'm always looking for new challenges
+                            to grow and innovate.
+                        </p><br>
+
+                        <p>
+                            I discovered data science recently and was instantly drawn to the world of data, modeling,
+                            and intelligent systems. With a strong love for mathematics since childhood, I found it
+                            natural to dive deep into this field. As an Electrical Engineer with a passion for
+                            innovation, I’ve always sought ways to solve real-world problems creatively. Data science
+                            has become the perfect intersection where I can blend my academic background with my
+                            curiosity for impactful, data-driven solutions — especially in domains related to my core
+                            discipline.
+                        </p>
+
+
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section glass-card">
+                <h2>🎓 Education</h2>
+                <ul>
+                    <li><strong>B.Tech in Electrical and Electronics Engineering</strong> – Birla Institute of
+                        Technology, Mesra, (2022 - 2026)</li>
+                    <li><strong>Senior Secondary (12th)</strong> DAV Public School Jamshedpur, CBSE, (2022)</li>
+                </ul>
+            </section>
+
+            <section class="info-section glass-card">
+                <h2>📜 Certifications</h2>
+                <ul>
+                    <li>Machine Learning Specialization – Coursera (deeplearning.ai) <a
+                            href="https://coursera.org/share/a0c36e0a8e1f8527597349000f2b5b73" target="_blank">View</a>
+                    </li>
+                    <li>Data Analyst Specialization – IBM Skills Network <a
+                            href="https://coursera.org/share/b804ad48cd7bb34e6bb85a77b367dbc9" target="_blank">View</a>
+                    </li>
+                    </li>
+                    <!-- Add more as needed -->
+                </ul>
+            </section>
+
+            <section class="info-section glass-card">
+                <h2>🏆 Achievements / Extracurriculars</h2>
+                <ul>
+                    <li>Internship at Tata Steel – Oven identification using RFID</li>
+                    <li>Industrial internship at ASD [Project based] – Built a Solar energy forecasting model</li>
+                    <li>2 nd position – Solo Instrumentals (Piano) | IIT BHU </li>
+                    <li>3 rd position – Solo Instrumentals (Piano) | IIT Bombay </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Prem Katyain</p>
+        </footer>
+
+         <script>
+    // Add fade-in class when page loads
+    document.body.classList.add('fade-out');
+    window.addEventListener('load', () => {
+        document.body.classList.remove('fade-out');
+        document.body.classList.add('fade-in');
+    });
+
+    // Add fade-out on link click (excluding target="_blank" and others)
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (
+            href &&
+            !href.startsWith('#') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:') &&
+            link.target !== '_blank'
+        ) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.body.classList.remove('fade-in');
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = this.href;
+                }, 400); // delay for transition
+            });
+        }
+    });
+</script>
+
+    </body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;600&display=swap"
+            rel="stylesheet">
+    </head>
+
+    
+
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <h2 class="section-title">My Projects</h2>
+
+            <section class="projects">
+
+                <div class="project-card">
+                    <a href="https://github.com/premKatyain/Fault-Detection.git" target="_blank">
+                        <img src="img/power_system.jpg" alt="Fault Detection">
+                        <div class="project-title">Fault Detection</div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="https://github.com/premKatyain/EV-charging-behaviour.git" target="_blank">
+                        <img src="img/EV.png" alt="EV Charging Behaviour">
+                        <div class="project-title">EV Charging Behaviour</div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="https://github.com/premKatyain/Book-recommender.git" target="_blank">
+                        <img src="img/books.jpeg" alt="Book Recommender">
+                        <div class="project-title">Book Recommender</div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href="https://github.com/premKatyain/Movie-recommender.git" target="_blank">
+                        <img src="img/movies.png" alt="Movie Recommender">
+                        <div class="project-title">Movie Recommender</div>
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <a href=" https://github.com/premKatyain/Churn_Analysis.git" target="_blank">
+                        <img src="img/churn.jpeg" alt="Churn Analysis">
+                        <div class="project-title">Churn Analysis (Data Analysis)</div>
+                    </a>
+                </div>
+
+
+
+                <!-- You can add more projects like this -->
+                <!-- <div class="project-card"> ... </div> -->
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Prem Katyain</p>
+        </footer>
+
+        <script>
+    // Add fade-in class when page loads
+    document.body.classList.add('fade-out');
+    window.addEventListener('load', () => {
+        document.body.classList.remove('fade-out');
+        document.body.classList.add('fade-in');
+    });
+
+    // Add fade-out on link click (excluding target="_blank" and others)
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+        const href = link.getAttribute('href');
+        if (
+            href &&
+            !href.startsWith('#') &&
+            !href.startsWith('mailto:') &&
+            !href.startsWith('tel:') &&
+            link.target !== '_blank'
+        ) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.body.classList.remove('fade-in');
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = this.href;
+                }, 400); // delay for transition
+            });
+        }
+    });
+</script>
+
+    </body>
+
+</html>
