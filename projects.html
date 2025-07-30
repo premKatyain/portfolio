@@ -74,36 +74,43 @@
             <p>© 2025 Prem Katyain</p>
         </footer>
 
-        <script>
-    // Add fade-in class when page loads
+       <script>
+    // Apply initial fade-out style before page loads
     document.body.classList.add('fade-out');
+
+    // Once page fully loads, remove fade-out and apply fade-in
     window.addEventListener('load', () => {
         document.body.classList.remove('fade-out');
         document.body.classList.add('fade-in');
     });
 
-    // Add fade-out on link click (excluding target="_blank" and others)
+    // Handle page transitions on internal links
     const links = document.querySelectorAll('a[href]');
     links.forEach(link => {
         const href = link.getAttribute('href');
+
         if (
             href &&
             !href.startsWith('#') &&
             !href.startsWith('mailto:') &&
             !href.startsWith('tel:') &&
-            link.target !== '_blank'
+            !link.hasAttribute('download') && // skip download links
+            link.target !== '_blank' // skip links meant to open in new tab
         ) {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.body.classList.remove('fade-in');
                 document.body.classList.add('fade-out');
+
+                // Wait for the transition to complete before navigating
                 setTimeout(() => {
                     window.location.href = this.href;
-                }, 400); // delay for transition
+                }, 400); // match your CSS transition duration
             });
         }
     });
 </script>
+
 
     </body>
 
